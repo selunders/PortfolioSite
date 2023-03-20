@@ -1,0 +1,37 @@
+- var title = "Seth Lunders | Home"
+
+doctype html
+html(lang="en")
+  include _includes/head.pug
+  body
+    include _includes/header.pug
+    main.home
+      section.me
+        //- h1 Seth Lunders
+        img(src="/img/me.jpg", alt="A photo of me")
+        p Seth Lunders
+        p B.S. Computer Science
+        p May 2023
+        //- a.btn(href="#about") Learn More
+      section.about(id="about")
+        h2 About Me
+        p Hi, my name is Seth! I'm a Computer Science major at the University of Idaho, graduating in May. Most of my time is spent on schoolwork, but in my free time I also do a bit of photography for fun. I'm actively updating this site, so check back soon for more projects!
+        br
+        p Check out my #[a(href="https://www.github.com/selunders") Github], or see some in-depth project explanations here:
+        ul
+          li 
+            a(href="#") Project 1
+          li 
+            a(href="#") Project 2
+          li 
+            a(href="#") Project 3
+          li 
+            a(href="#") Project 4
+          li 
+            a(href="#") Project 5
+    aside
+        h2 Sidebar
+
+
+    include _includes/scripts.pug
+    include _includes/foot.pug
