@@ -1,0 +1,28 @@
+- var title = "Projects | CS383"
+
+doctype html
+html(lang="en")
+  include ../_includes/head.pug
+  body
+    include ../_includes/header.pug
+    main.project
+      section.info
+        //- h1 Seth Lunders
+        a(href="https://goldpearlpress.com/", target="_blank")
+            img(src="/img/goldpearlpress.png", alt="Screenshot of Gold Pearl Press website") 
+        //- p Site for #[em Gold Pearl Press]
+        //- p Spring 2023
+      section.about
+        h2 #[em Gold Pearl Press] Website | Spring 2023
+        //- h3
+        a(href="https://goldpearlpress.com", target="_blank").btn.btn_full Visit Site
+            //- a(href="https://goldpearlpress.com/", target="_blank").github_link View Site
+        //- br
+        p In this project I developed a clean, responsive site for #[em Gold Pearl Press, LLC].
+        //- br
+        p I wrote the site using the #[a(href="https://www.pugjs.org", target="_blank") PugJS] and #[a(href="https://11ty.dev", target="_blank") 11ty] to help generate the HTML, vanilla CSS, and a bit of JS for the mobile nav. Media queries were used to ensure the site looks good on any device. A couple simple animations were either written with CSS transitions or the #[a(href="https://animejs.com", target="_blank") anime.js] library.
+        a(href="/").btn.btn_ghost Back
+
+
+    include ../_includes/scripts.pug
+    include ../_includes/foot.pug
