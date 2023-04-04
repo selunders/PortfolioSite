@@ -1,9 +1,9 @@
 body {
     /* font-family: 'Nunito', sans-serif; */
     font-family: 'Silkscreen', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     background-color: #283030;
-    color: white;
+    color: rgb(222, 222, 222);
     min-height: 100vh;
     line-height: 1.5;
     width: 100%;
@@ -11,13 +11,19 @@ body {
     max-width: 1080px;
     display: grid;
     grid:
-        "h h"
-        "m m"
-        "f f";
+    "h h"
+    "m m"
+    "f f";
 }
 
 h1, h2, h3, h4, h5, h6 {
+    /* font-family: 'Silkscreen', sans-serif; */
     font-weight: 300;
+    color:rgb(0, 209, 174);
+}
+
+h3 {
+    text-decoration: underline;
 }
 
 header {
@@ -30,7 +36,7 @@ header {
 
 header h2 {
     color:rgb(0, 209, 174);
-    font-size: 3.5em;
+    font-size: 3em;
     /* font-family: Silkscreen, sans-serif; */
     text-align: center;
     font-weight: 400;
@@ -167,7 +173,7 @@ a.logo-github:active {
 }
 
 .social-icon {
-    font-size: 1.7em;
+    font-size: 2em;
     margin-left: 10px;
 }
 
@@ -220,4 +226,32 @@ footer {
 
 footer p {
     margin: 20px;
+}
+
+section.in_depth {
+    /* padding: 10px 20px; */
+    width: 85%;
+    margin: 0 auto;
+}
+
+section.in_depth div {
+    position: relative;
+    display: block;
+    /* height: auto; */
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+section.in_depth img {
+    max-width: 48%;
+}
+
+.right {
+    float: right;
+    padding-left: 2%;
+}
+
+.left {
+    float: left;
+    padding-right: 2%;
 }

@@ -1,0 +1,59 @@
+- var title = "Projects | CS383"
+
+doctype html
+html(lang="en")
+  include ../_includes/head.pug
+  body
+    include ../_includes/header.pug
+    main.project
+        section.info
+            //- h1 Seth Lunders
+            //- a(href="https://goldpearlpress.com/", target="_blank")
+            img(src="/img/djangoStore/products_page.png", alt="Screenshot of Django e-commerce store") 
+            //- img(src="/img/djangoStore/ss_store_full.png", alt="Screenshot of Django e-commerce store") 
+        section.about
+            h2 Django Mock E-Commerce Store | Spring 2022
+            //- h3
+            a(href="https://github.com/selunders/cs360_store", target="_blank").btn.btn_full View&nbsp;Repo
+                //- a(href="https://goldpearlpress.com/", target="_blank").github_link View Site
+            //- br
+            p In this project, #[a(href="https://github.com/SpartanDH45", target="_blank") SpartanDH45] and I designed and developed an ecommerce store using a #[a(href="https://www.djangoproject.com/", target="_blank") Django] (Python) backend, along with the #[a(href="https://getbootstrap.com/", target="_blank") Bootstrap] library for quick styling. We used SQLite for the database functionality.
+            br
+            p This was quite a large project, so keep scrolling if you want to learn more! Otherwise, click 'Back' to check out some of my other work.
+            a(href="/").btn.btn_ghost Back
+            br
+        section.in_depth
+            div 
+                img(src="/img/djangoStore/ERD_diagram.png", alt="ER Diagram").left
+                h2 Database Design
+                p (Right Click / Open Image in New Tab to zoom)
+                p The Entity Relationship Diagram (ERD) above shows the database schema we used. The main entries are the Users/Vendors, Products/Services, Carts, and Invoice items.
+            div
+                img(src="/img/djangoStore/ss_mobileproducts.png", alt="Mobile Products view").right
+                h2 Buyers can:
+                ul 
+                    li Browse products and services by category, vendor, or through a search.
+                    li Add products to cart
+                    li Edit quantity in cart 
+                    li Save cart for later 
+                    li Check out their cart
+                h2 Sellers can: 
+                ul 
+                    li Do anything a buyer can.
+                    li Manage their 'shop' page 
+                    li Create/Update/Delete products and services 
+                    li Manage customers orders
+            div 
+                img(src="/img/djangoStore/ss_orders.png", alt="Mobile Products view").left
+                h2 Some cool features: 
+                p Buyers are not limited to purchasing from one seller at a time. So, we had to design the database in such a way that sellers only see their specific items on a buyers invoice.
+                br
+                p Sellers can change the price of their items—so what if a buyer looks at an invoice of a purchase with an item whose price has changed? To remedy this, an invoice item is created, which keeps track of the price at the time of the sale.
+                br
+                p Sellers sometimes stop selling an item. What if someone needs to see an invoice of a deleted item? To remedy this, buyers cannot actually #[em delete] a listing if someone has purchased it. They can only disable it. This prevents it from being purchased or searched for, but can still be viewed through an invoice. This is enforced using on_delete=models.RESTRICT in the model.
+                br
+                p Check out the #[a(href="https://github.com/selunders/cs360_store/blob/main/cs360store/storeApp/models.py", target="_blank") models.py] file to see the full database schema.
+
+
+    include ../_includes/scripts.pug
+    include ../_includes/foot.pug
