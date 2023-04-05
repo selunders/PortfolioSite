@@ -1,0 +1,42 @@
+- var title = "Projects | CS383"
+
+doctype html
+html(lang="en")
+  include ../_includes/head.pug
+  body
+    include ../_includes/header.pug
+    main.project
+        section.info
+            //- h1 Seth Lunders
+            //- a(href="https://goldpearlpress.com/", target="_blank")
+            video(autoplay, muted, loop)
+                source(src="/img/tensileTesterUI/demo.mp4", type="video/mp4") 
+                //- source(src="/img/tensileTesterUI/demo.mp4", type="video/mp4") 
+            //- img(src="/img/djangoStore/products_page.png", alt="Screenshot of Django e-commerce store") 
+            //- img(src="/img/djangoStore/ss_store_full.png", alt="Screenshot of Django e-commerce store") 
+            p.center-text (Updated 4/4/23)
+        section.about
+            h2 UI for Cryogenic Tensile&nbsp;Tester | Fall&nbsp;22-Spring&nbsp;23
+            //- h3
+            a(href="https://github.com/selunders/tensileTesterUI", target="_blank").btn.btn_full View&nbsp;Repo
+                //- a(href="https://goldpearlpress.com/", target="_blank").github_link View Site
+            //- br
+            p This is part of a multi-year Senior Capstone project at the University of Idaho; in collaboration with NASA ISGC. The previous two years focused on retrofitting a tensile tester to perform tests at temperatures around 100K—to simulate space-like conditions for tests on aluminum alloys.
+            br
+            p We are the third team to work on the project, and our main goals are to: 
+            ul
+                li get the machine back together/working again (having some clutch issues)
+                li integrate new sensors: thermocouple, rotary encoder
+                li and develop a user interface to control the machine/view live data
+            br
+            p I'm one of two CS students on the team, along with one Comp-E student and two MEs. My part of the project involved designing and implementing the user interface.
+            br
+            p The previous semester's team had began to build a user interface, but it was not within the main scope of their project and was not fully fleshed out. We've rebuilt the overall structure ourselves, but have been able to reuse some of the code for interfacing with the machine. A big reason for this was so we could use multiprocessing. This way, the data collection, data processing, and user interface can all run in parallel—for instance, if a data processing calculation takes a long time, it won't impact the data collection process.
+            br
+            p We used multiprocessing instead of multithreading due to Python's #[a(href="https://wiki.python.org/moin/GlobalInterpreterLock", target="_blank") Global Interpreter Lock], which only allows one Python thread to execute at a time.
+            br
+            p #[strong Note:] The animation above is a slightly outdated version, the axis labels are incorrect and we've moved some buttons around.
+            p We're still finishing this up, but I'll update the progress when we get more done!
+            a(href="/").btn.btn_ghost Back
+    include ../_includes/scripts.pug
+    include ../_includes/foot.pug
