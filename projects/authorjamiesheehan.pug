@@ -1,0 +1,37 @@
+- var title = "Projects | CS383"
+
+doctype html
+html(lang="en")
+  include ../_includes/head.pug
+  body
+    include ../_includes/header.pug
+    main.project
+      section.info
+        //- h1 Seth Lunders
+        a(href="https://authorjamiesheehan.com/", target="_blank")
+            img(src="/img/authorjamiesheehan/hero.jpg", alt="Screenshot of author Jamie Sheehan's showcase website.") 
+        //- p Site for #[em Gold Pearl Press]
+        //- p Spring 2023
+      section.about
+        h2 Author Jamie Sheehan | Showcase Website | Spring 2023
+        //- h3
+        a(href="https://authorjamiesheehan.com", target="_blank").btn.btn_full Visit&nbsp;Site
+            //- a(href="https://goldpearlpress.com/", target="_blank").github_link View Site
+        //- br
+        p This project is similar to the #[a(href="/projects/goldpearlpress/") Gold Pearl Press site]. The client gave me some designs for each page, which I recreated in HTML/CSS and made responsive with relative units and media queries. 
+        br
+        h2 Contact Page (Desktop &amp; Mobile)
+        p Here's a couple screenshots to show the site at different screen sizes.
+        br
+        img(src="/img/authorjamiesheehan/contact_full_and_mobile.png", alt="Screenshot of Author Jamie Sheehan's showcase website.")
+        br
+        h2 CSS Grid
+        p The about page shows another place 'display: grid;' comes in handy. We can start the textbox's column-start to start before the image's column-end, allowing them to overlap.
+        br
+        img(src="/img/authorjamiesheehan/about_full.png", alt="Screenshot of Author Jamie Sheehan's showcase website.") 
+        br
+        a(href="/").btn.btn_ghost Back
+
+
+    include ../_includes/scripts.pug
+    include ../_includes/foot.pug

@@ -1,0 +1,58 @@
+- var title = "Projects | CS383"
+
+doctype html
+html(lang="en")
+  include ../_includes/head.pug
+  body
+    include ../_includes/header.pug
+    main.project
+        section.info
+            //- h1 Seth Lunders
+            a(href="https://photos.sethlunders.com/", target="_blank")
+                img(src="/img/photosSethLunders.png", alt="Screenshot of Django e-commerce store")
+        section.about
+            h2 Photography Portfolio | Summer 2023
+            //- h3
+            //- a(href="https://github.com/selunders/cs360_store", target="_blank").btn.btn_full View&nbsp;Repo
+            a(href="https://photos.sethlunders.com/", target="_blank").btn.btn_full View&nbsp;Site
+            //- a(href="https://photos.sethlunders.com/").github_link Visit Site
+            //- br
+            p I built this project for a couple reasons: to have a place to post some of my photos, and to improve my JS skills.
+            br
+            p This was quite a large project, so keep scrolling if you want to learn more! Otherwise, click 'Back' to check out some of my other work.
+            a(href="/").btn.btn_ghost Back
+            br
+            hr
+        section.in_depth
+            div 
+                img(src="/img/photosSite/minifyCode.png", alt="Code to minify all the images in a folder.").left
+                h2 Compress Images
+                p The first problem I wanted to solve was getting my photos in a format ready to serve to the user. This involved shrinking them and converting them to all the same file type.
+                p To do this, I used the #[a(src="https://www.11ty.dev/docs/plugins/image/", target="_blank") 11ty Image Plugin]. Using this in a loop, it was straightforward to iterate through the folder of images, compressing and converting each one. The resulting images are placed in another folder of minified images.
+            div
+                img(src="/img/photosSite/createPhotoDataCode.png", alt="Code for storing image file names into a JSON object.").right
+                h2 Collecting Photo Data
+                p Next, I had another couple problems to solve. First, I wanted each image to be able to hold its own information, such as title, description, date, location, etc. I also needed the user to be able to access all that data.
+                br
+                p My first thought was to write JS code in my Pug file to read the directory of input images, then create an html element for each image in the folder. But, I learned that 'require()' is not available in the template.
+                br
+                p To get around this, I created a seperate script to run this step, as well as the minify code from above. This can just be executed before building the site, and all the images will load correctly.
+                br
+                p The final code stores the name of the file as the key in an object, and attaches a title and description to that key. This is stored in a JSON file. Next, I just input in the JSON file the title and description. 
+            div 
+                img(src="/img/photosSite/fetchPhotoData.png", alt="Photo Data").left
+                h2 The Client Side: 
+                p Finally, I wrote the code for the client to use the data we just stored. First, it fetches the JSON file of photo data.
+                br
+                p The photos elements themselves are actually created in the PUG template, using a loop. In hindsight, I may as well have just created the elements here, but this works fine too.
+                br
+                p Anyways, when the JS runs it attaches the data to the elements themselves on the page, based on the image/file name.
+            div
+                img(src="/img/photosSite/photoInfoPopup.png", alt="A popup for displaying my photo data. Shows title and description.").right
+                h2 End Result
+                p I was pretty happy with how the site turned out. It's not the fanciest thing, but I learned quite a bit about working with JS, and it gives me a place to show off some photos😁!
+            a(href="/").btn.btn_ghost Back
+
+
+    include ../_includes/scripts.pug
+    include ../_includes/foot.pug
